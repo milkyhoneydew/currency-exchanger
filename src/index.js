@@ -5,8 +5,8 @@ import './css/styles.css';
 import CurrencyService from './currency.js';
 
 //Business Logic
-function getRate() {
-  CurrencyService.getRate() 
+function getRate(country, amount) {
+  CurrencyService.getRate(country, amount) 
     .then(function(response) {
       printElements(response); 
     }, function(errorMessage) {
@@ -17,11 +17,10 @@ function getRate() {
 //UI Logic
 
 function printElements(response) {
-  let countryCode = document.querySelector('#exchange').value;
-  let usd = parseInt(document.querySelector('#usd').value);
-  let exchangeRate = response.conversion_rates.`${countryCode}`;
-  let exchangedCurrency = usd * exchangeRate;
-  document.querySelector('#showResponse').innerText = `${usd} USD = ${exchangedCurrency} ${country}`;
+  document.querySelector("#showResponse").innerText = response.conversion_result;
+  document.querySelector("#usd").value = null;
+  document.querySelector("#exchange").value = null;
+  
 }
 
 function printError(errorMessage) {
@@ -30,12 +29,11 @@ function printError(errorMessage) {
 
 function handleFormSubmission(event) {
   event.preventDefault();
-  document.querySelector("#usd").value = null;
-  document.querySelector("#exchange").value = null;
-  document.querySelector('#showResponse').innerText = null;
-  getRate();
+  let country = document.querySelector('#exchange').value.toUpperCase;
+  let amount = parseInt(document.querySelector('#usd').value);
+  getRate(country, amount);
 }
 
 window.addEventListener("load", function() {
-  document.querySelector("form#submitBtn").addEventListener("submit", handleFormSubmission);
+  document.querySelector("form").addEventListener("submit", handleFormSubmission);
 });
