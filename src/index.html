@@ -1,0 +1,49 @@
+<html lang="en-US">
+<head>
+  <title>Currency Exchanger</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Convert your currency using the most up-to-date rates.</h1>
+    <div class="currency-codes">
+      <h2>Currency Codes</h2>
+      <ul>
+        <li>ARS</li>
+        <li>AUD</li>
+        <li>EUR</li>
+        <li>INR</li>
+        <li>JPY</li>
+      </ul>
+    </div>
+    <div class="currency-names">
+      <h2>Currency Name</h2>
+      <ul>
+        <li>Argentina Peso</li>
+        <li>Australia Dollar</li>
+        <li>Euro</li>
+        <li>Indian Rupee</li>
+        <li>Japanese Yen</li>
+      </ul>
+    </div>
+    <div class="country">
+      <h2>Country</h2>
+      <ul>
+        <li>Argentina</li>
+        <li>Australia</li>
+        <li>European Union</li>
+        <li>India</li>
+        <li>Japan</li>
+      </ul>
+    </div>
+    <p>Please enter your amount in USD, followed by the currency code you wish to convert to:</p>
+    <form>
+      <label for="usd">USD</label>
+      <input id="usd" type="text" name="usd">
+      <label for="exchange">Currency Code</label>
+      <input id="exchange" type="text" name="exchange">
+      <button type="submit" class="btn-success" id="submitBtn">Exchange</button>
+    </form>
+    <p class="hidden" id="showResponse"></p>
+  </div>
+</body>
+</html>
