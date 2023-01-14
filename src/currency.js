@@ -1,9 +1,9 @@
 export default class CurrencyService {  
-  static getRate() {
-    return fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`)
+  static getRate(country, amount) {
+    return fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/pair/USD/${country}/${amount}`)
       .then(function(response) {
         if (!response.ok) {
-          const errorMessage = `${response.result} ${response.error-type}`;
+          const errorMessage = `${response.status} ${response.statusText}`;
           throw new Error(errorMessage);
         } else {
           return response.json();
