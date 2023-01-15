@@ -1,0 +1,20 @@
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.currency-codes {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.currency-names {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.country {
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
