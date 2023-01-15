@@ -29,7 +29,7 @@ function printError(errorMessage) {
 
 function handleFormSubmission(event) {
   event.preventDefault();
-  let country = document.querySelector('#exchange').value.toUpperCase;
+  let country = document.querySelector('#exchange').value.toUpperCase();
   let amount = parseInt(document.querySelector('#usd').value);
   getRate(country, amount);
 }
